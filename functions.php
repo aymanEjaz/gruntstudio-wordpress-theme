@@ -1,6 +1,7 @@
 <?php
 
 //setup
+define('JU_DEV_MOD' , true);
 
 // Includes
 include(get_theme_file_path('/includes/front/enqueue.php'));
