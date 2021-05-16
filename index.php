@@ -36,18 +36,18 @@
               <nav class="site-navigation text-right" role="navigation">
                 <div class="container">
 
-                  <div class="d-inline-block d-lg-block ml-md-0 mr-auto py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-black">
-                    <span class="icon-menu h3"></span> <span class="menu-text">Menu</span>
-                  </a></div>
 
-                  <ul class="site-menu main-menu js-clone-nav d-none d-lg-none">
-                    <li><a href="#home-section" class="nav-link">Home</a></li>
-                    <li><a href="#what-we-do-section" class="nav-link">What We Do</a></li>
-                    <li><a href="#about-section" class="nav-link">About Us</a></li>
-                    <li><a href="#portfolio-section" class="nav-link">Portfolio</a></li>
-                    <li><a href="#studio-section" class="nav-link">Gallery</a></li>
-                    <li><a href="#contact-section" class="nav-link">Contact</a></li>
-                  </ul>
+                  <?php
+                  if( has_nav_menu('primary')){
+                 
+                      wp_nav_menu([
+                        
+                        'menu_class' => 'nav justify-content-center topnav',
+                        'theme_location'      =>   'primary' , 
+                          'fallback_cb'         =>  false,
+                          'depth'               =>  4
+                          ]);    
+ } ?>
                 </div>
               </nav>
             </div>
