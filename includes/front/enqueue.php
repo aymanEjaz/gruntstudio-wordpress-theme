@@ -31,7 +31,7 @@ function ju_enqueue(){
     wp_enqueue_style( 'ju_style');
     
 
-    wp_register_script( 'jquery-2' , $uri . '/assets/js/jquery-3.3.1.min.js',  [] , $ver , true);
+    wp_register_script( 'jquery' , $uri . '/assets/js/jquery-3.3.1.min.js',  [] , $ver , true);
     wp_register_script( 'popper' , $uri . '/assets/js/jquery-3.3.1.min.js' ,  [] , $ver , true );
     wp_register_script( 'bootstrap' , $uri . '/assets/js/jquery-3.3.1.min.js' , [], $ver   , true );
     wp_register_script( 'carousel' , $uri . '/assets/js/jquery-3.3.1.min.js' , [], $ver   , true );
@@ -43,7 +43,7 @@ function ju_enqueue(){
     wp_register_script( 'fancybox' , $uri . '/assets/js/jquery-3.3.1.min.js' , [], $ver , true );
     wp_register_script( 'main' , $uri . '/assets/js/jquery-3.3.1.min.js' , [], $ver , true );
 
-    wp_enqueue_script( 'jquery-2');
+    wp_enqueue_script( 'jquery');
     wp_enqueue_script( 'popper');
     wp_enqueue_script( 'bootstrap');
     wp_enqueue_script( 'carousel');
@@ -56,3 +56,9 @@ function ju_enqueue(){
     wp_enqueue_script( 'main');
 
 }
+
+add_action('wp_default_scripts', function ($scripts) {
+    if (!empty($scripts->registered['jquery'])) {
+        $scripts->registered['jquery']->deps = array_diff($scripts->registered['jquery']->deps, ['jquery-migrate']);
+    }
+});
