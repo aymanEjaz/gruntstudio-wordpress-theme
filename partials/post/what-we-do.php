@@ -3,7 +3,7 @@
         <div class="row mb-5">
           <div class="col-lg-6 section-title">
             <span class="sub-title mb-2 d-block">What We Do</span>
-            <h2 class="title text-primary">Far far away, behind the word mountains far from the countries</h2>
+            <h2 class="title text-primary">Far far away, behind theuntries</h2>
           </div>
         </div>
         <div class="row">
@@ -56,4 +56,5 @@
           </div>
         </div>
       </div>
-    </div> <!-- END .site-section -->
+    </div> 
+    <!-- END .site-section -->
